@@ -103,7 +103,25 @@ public class SortingAlgorithms
 
     public static int[] BubbleSort(int[] array)
     {
-        
+        int outer, inner, temp;
+
+        //The outer loop runs from right to left
+        for(outer = array.length-1; outer > 0; outer--)
+        {
+            //The inner loop runs from left to right
+            for(inner = 0; inner < outer; inner ++)
+            {
+                //If the left iten is greater than the right one, swap them
+                if(array[inner] > array[inner+1])
+                {
+                    temp = array[inner];
+                    array[inner] = array[inner+1];
+                    array[inner + 1] = temp;
+                }
+            }
+        }
+        return array;
+
     }
 
 }
