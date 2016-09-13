@@ -43,13 +43,19 @@ public class SortingAlgorithms
         System.out.println("4. Merge Sort");
         System.out.println("5. Quick Sort");
         System.out.println("6. Exit");
-        System.out.println("----------------------");
+        System.out.println("----------------------\n");
 
-        //Retrieve the choice from the user
-        System.out.print("\nPlease enter your sort choice: ");
-        choice = input.nextInt();
+        //Keep prompting user for sorting method until this choose to exit
+        do
+        {
+            System.out.print("\nPlease enter your sort choice: ");
+            choice = input.nextInt();
 
-        chooseMethod(choice, Array);
+            chooseMethod(choice, Array);
+        }
+        while(choice != 6);
+
+        System.exit(0);
     }
 
     public static void chooseMethod(int choice,  int[] Array)
@@ -59,12 +65,13 @@ public class SortingAlgorithms
             //Assign array to new array and call Bubble Sort method
             int[] sortedArray = BubbleSort(Array);
 
-            //call method to store array in new text file
-            //writeArray(sortedArray);
-
             //display sorted array
             System.out.println("\nArray after sorting: ");
             displayArray(sortedArray);
+
+            //call method to store array in new text file
+            writeArray(sortedArray);
+
         }
 
         else if (choice == 2)
@@ -72,12 +79,12 @@ public class SortingAlgorithms
             //Assign array to new array and call Selection Sort method
             int[] sortedArray = SelectionSort(Array);
 
-            //call method to store array in new text file
-            writeArray(sortedArray);
-
             //display sorted array
             System.out.println("\nArray after sorting: ");
             displayArray(sortedArray);
+
+            //call method to store array in new text file
+            writeArray(sortedArray);
         }
 
         else if (choice == 3)
@@ -85,12 +92,12 @@ public class SortingAlgorithms
             //Assign array to new array and call Insertion Sort method
             int[] sortedArray = InsertionSort(Array);
 
-            //call method to store array in new text file
-            writeArray(sortedArray);
-
             //display sorted array
             System.out.println("\nArray after sorting: ");
             displayArray(sortedArray);
+
+            //call method to store array in new text file
+            writeArray(sortedArray);
         }
 
         else if (choice == 4)
@@ -98,12 +105,12 @@ public class SortingAlgorithms
             //Assign array to new array and call Merge Sort method
             int[] sortedArray = MergeSort(Array);
 
-            //call method to store array in new text file
-            writeArray(sortedArray);
-
             //display sorted array
             System.out.println("\nArray after sorting: ");
             displayArray(sortedArray);
+
+            //call method to store array in new text file
+            writeArray(sortedArray);
         }
 
         else if (choice == 5)
@@ -111,17 +118,17 @@ public class SortingAlgorithms
             //Assign array to new array and call Quick Sort method
             int[] sortedArray = QuickSort(Array, 0, Array.length - 1);
 
-            //call method to store array in new text file
-            writeArray(sortedArray);
-
             //display sorted array
             System.out.println("\nArray after sorting: ");
             displayArray(sortedArray);
+
+            //call method to store array in new text file
+            writeArray(sortedArray);
         }
 
-        else if (choice == 6)
+        else
         {
-            System.exit(0);
+            System.out.println("Invalid choice. Please choose again.");
         }
     }
 
@@ -154,7 +161,7 @@ public class SortingAlgorithms
                 pr.println(array[i]);
             }
             pr.close();
-            System.out.println("\nThe file " + fileName + "has been sorted and stored in 'SortedNumbers.txt' ");
+            System.out.println("\n The file " + fileName + "has been sorted and stored in 'SortedNumbers.txt' ");
         }
         catch (FileNotFoundException e)
         {
