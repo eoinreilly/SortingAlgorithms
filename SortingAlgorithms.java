@@ -44,6 +44,7 @@ public class SortingAlgorithms
         System.out.println("3. Insertion Sort");
         System.out.println("4. Merge Sort");
         System.out.println("5. Quick Sort");
+        System.out.println("6. Exit");
         System.out.println("----------------------");
 
         //Retrieve the choice from the user
@@ -52,13 +53,72 @@ public class SortingAlgorithms
 
         if (choice == 1)
         {
-            //Assign sorted array to new array and call Bubble Sort method
+            //Assign array to new array and call Bubble Sort method
             int[] sortedArray = BubbleSort(Array);
+
             //call method to store array in new text file
             writeArray(sortedArray);
+
             //display sorted array
             System.out.println("\nArray after sorting: ");
             displayArray(sortedArray);
+        }
+
+        else if (choice == 2)
+        {
+            //Assign array to new array and call Selection Sort method
+            int[] sortedArray = SelectionSort(Array);
+
+            //call method to store array in new text file
+            writeArray(sortedArray);
+
+            //display sorted array
+            System.out.println("\nArray after sorting: ");
+            displayArray(sortedArray);
+        }
+
+        else if (choice == 3)
+        {
+            //Assign array to new array and call Insertion Sort method
+            int[] sortedArray = InsertionSort(Array);
+
+            //call method to store array in new text file
+            writeArray(sortedArray);
+
+            //display sorted array
+            System.out.println("\nArray after sorting: ");
+            displayArray(sortedArray);
+        }
+
+        else if (choice == 4)
+        {
+            //Assign array to new array and call Merge Sort method
+            int[] sortedArray = MergeSort(Array);
+
+            //call method to store array in new text file
+            writeArray(sortedArray);
+
+            //display sorted array
+            System.out.println("\nArray after sorting: ");
+            displayArray(sortedArray);
+        }
+
+        else if (choice == 5)
+        {
+            //Assign array to new array and call Quick Sort method
+            int[] sortedArray = QuickSort(Array);
+
+            //call method to store array in new text file
+            writeArray(sortedArray);
+
+            //display sorted array
+            System.out.println("\nArray after sorting: ");
+            displayArray(sortedArray);
+        }
+
+        else if (choice == 6)
+        {
+            System.exit(0);
         }
 
     }
@@ -101,6 +161,7 @@ public class SortingAlgorithms
         }
     }
 
+    //Bubble sort method
     public static int[] BubbleSort(int[] array)
     {
         int outer, inner, temp;
@@ -123,5 +184,31 @@ public class SortingAlgorithms
         return array;
 
     }
+
+    //Selection sort method
+    public static int[] SelectionSort(int[] array)
+    {
+
+    }
+
+    //InsertionSort method
+    public static int[] InsertionSort(int[] array)
+    {
+
+    }
+
+    //MergeSort method
+    public static int[] MergeSort(int[] array)
+    {
+
+    }
+
+    //QuickSort method
+    public static int[] QuickSort(int[]array, int left, int right)
+    {
+
+    }
+
+
 
 }
