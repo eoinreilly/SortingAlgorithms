@@ -156,10 +156,18 @@ public class SortingAlgorithms
         {
             PrintWriter pr = new PrintWriter("src/SortedNumbers.txt");
 
+            //Foreach loop used over for loop as it is easier to read
+            for(int i : array)
+            {
+                pr.println(array[i]);
+            }
+
+            /*
             for(int i = 0; i < array.length; i++)
             {
                 pr.println(array[i]);
             }
+            */
             pr.close();
             System.out.println("\n The file " + fileName + "has been sorted and stored in 'SortedNumbers.txt' ");
         }
